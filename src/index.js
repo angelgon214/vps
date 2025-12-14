@@ -35,7 +35,7 @@ app.use((err, req, res, next) => {
 // Solo iniciar servidor si no estamos en pruebas
 if (process.env.NODE_ENV !== 'test') {
     app.listen(PORT, () => {
-        console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
+        console.log(`Servidor corriendo en puerto ${PORT}`);
     });
 }
 
