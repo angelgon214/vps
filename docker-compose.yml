@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     build: .
-    image: ghcr.io/TU_USUARIO/TU_REPO:latest
+    image: ghcr.io/angelgon214/vps:latest
     container_name: mi-app-node
     restart: unless-stopped
     ports:
