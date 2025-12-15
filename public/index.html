@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <header>
-        <h1>🚀 Mi API REST</h1>
+        <h1>VPS</h1>
         <p class="subtitle">Proyecto Node.js con CI/CD</p>
     </header>
 
@@ -24,7 +24,7 @@
     </section>
 
     <section class="endpoints">
-        <h2>📡 Endpoints Disponibles</h2>
+        <h2>Endpoints</h2>
 
         <div class="endpoint-card">
             <div class="method get">GET</div>
@@ -40,7 +40,11 @@
             <div class="endpoint-info">
                 <h3>/api/users</h3>
                 <p>Crear un nuevo usuario</p>
-                <button onclick="testEndpoint('/api/users', 'POST')">Probar</button>
+                <div class="input-group">
+                    <input type="text" id="userName" placeholder="Nombre" value="Usuario de Prueba">
+                    <input type="email" id="userEmail" placeholder="Email" value="prueba@example.com">
+                </div>
+                <button onclick="createUser()">Probar</button>
             </div>
         </div>
 
@@ -49,18 +53,16 @@
             <div class="endpoint-info">
                 <h3>/api/users/:id</h3>
                 <p>Obtener usuario por ID</p>
-                <button onclick="testEndpoint('/api/users/1', 'GET')">Probar</button>
+                <div class="input-group">
+                    <input type="number" id="userId" placeholder="ID del usuario" value="1" min="1">
+                </div>
+                <button onclick="getUserById()">Probar</button>
             </div>
         </div>
     </section>
 
-    <section class="response">
-        <h2>📋 Respuesta</h2>
-        <pre id="response-area">Haz click en "Probar" para ver la respuesta...</pre>
-    </section>
-
     <footer>
-        <p>Desarrollado con ❤️ | Monitoreado con <a href="/grafana" target="_blank">Grafana</a></p>
+        <p>Desarrollado por Angel Gonzalez | Monitoreado con Grafana</p>
     </footer>
 </div>
 
