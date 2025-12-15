@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/api', apiRoutes);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 });
 
 app.use((err, req, res, next) => {
