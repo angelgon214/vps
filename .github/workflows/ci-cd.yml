@@ -7,7 +7,7 @@ on:
     branches: [ main, master ]
 
 jobs:
-  # Job 1: Tests
+
   test:
     runs-on: ubuntu-latest
 
@@ -35,7 +35,7 @@ jobs:
         uses: codecov/codecov-action@v3
         if: matrix.node-version == '20.x'
 
-  # Job 2: Build and Push Docker Image
+
   build-and-push:
     needs: test
     runs-on: ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  # Job 3: Deploy to VPS
+
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
