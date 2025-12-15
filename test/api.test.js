@@ -4,12 +4,11 @@ const app = require('../src/index');
 describe('API Integration Tests', () => {
 
     describe('GET /', () => {
-        it('debería retornar mensaje de bienvenida', async () => {
+        it('debería retornar la página HTML', async () => {
             const response = await request(app).get('/');
 
             expect(response.status).toBe(200);
-            expect(response.body).toHaveProperty('message');
-            expect(response.body.status).toBe('success');
+            expect(response.headers['content-type']).toContain('text/html');
         });
     });
 
