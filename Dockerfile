@@ -16,6 +16,7 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/src ./src
 COPY --from=builder /app/routes ./routes
 COPY --from=builder /app/controllers ./controllers
+COPY --from=builder /app/public ./public
 
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
