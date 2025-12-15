@@ -1,11 +1,10 @@
-// Simulación de base de datos en memoria
 let users = [
     { id: 1, name: 'Juan Pérez', email: 'juan@example.com' },
-    { id: 2, name: 'María García', email: 'maria@example.com' }
+    { id: 2, name: 'María García', email: 'maria@example.com' },
+    { id: 3, name: 'Oscar Ubaldo', email: 'oscar@example.com' }
 ];
 
 const apiController = {
-    // Obtener todos los usuarios
     getUsers: (req, res) => {
         res.json({
             status: 'success',
@@ -13,7 +12,6 @@ const apiController = {
         });
     },
 
-    // Crear un nuevo usuario
     createUser: (req, res) => {
         const { name, email } = req.body;
 
@@ -38,7 +36,6 @@ const apiController = {
         });
     },
 
-    // Obtener usuario por ID
     getUserById: (req, res) => {
         const userId = parseInt(req.params.id);
         const user = users.find(u => u.id === userId);

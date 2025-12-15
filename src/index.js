@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const apiRoutes = require('../routes/api.routes');
@@ -7,23 +8,18 @@ const apiRoutes = require('../routes/api.routes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
-app.get('/', (req, res) => {
-    res.json({
-        message: 'API funcionando correctamente',
-        version: '1.0.0',
-        status: 'success'
-    });
-});
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/api', apiRoutes);
 
-// Error handling middleware
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({
@@ -32,10 +28,9 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Solo iniciar servidor si no estamos en pruebas
 if (process.env.NODE_ENV !== 'test') {
     app.listen(PORT, () => {
-        console.log(`Servidor corriendo en puerto ${PORT}`);
+        console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
     });
 }
 

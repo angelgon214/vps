@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi API - Node.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🚀 Mi API REST</h1>
+        <p class="subtitle">Proyecto Node.js con CI/CD</p>
+    </header>
+
+    <section class="status">
+        <div class="status-card">
+            <h3>Estado del Servidor</h3>
+            <div class="status-indicator online">
+                <span class="dot"></span>
+                <span>En línea</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="endpoints">
+        <h2>📡 Endpoints Disponibles</h2>
+
+        <div class="endpoint-card">
+            <div class="method get">GET</div>
+            <div class="endpoint-info">
+                <h3>/api/users</h3>
+                <p>Obtener todos los usuarios</p>
+                <button onclick="testEndpoint('/api/users', 'GET')">Probar</button>
+            </div>
+        </div>
+
+        <div class="endpoint-card">
+            <div class="method post">POST</div>
+            <div class="endpoint-info">
+                <h3>/api/users</h3>
+                <p>Crear un nuevo usuario</p>
+                <button onclick="testEndpoint('/api/users', 'POST')">Probar</button>
+            </div>
+        </div>
+
+        <div class="endpoint-card">
+            <div class="method get">GET</div>
+            <div class="endpoint-info">
+                <h3>/api/users/:id</h3>
+                <p>Obtener usuario por ID</p>
+                <button onclick="testEndpoint('/api/users/1', 'GET')">Probar</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="response">
+        <h2>📋 Respuesta</h2>
+        <pre id="response-area">Haz click en "Probar" para ver la respuesta...</pre>
+    </section>
+
+    <footer>
+        <p>Desarrollado con ❤️ | Monitoreado con <a href="/grafana" target="_blank">Grafana</a></p>
+    </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

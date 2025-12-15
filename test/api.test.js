@@ -3,7 +3,6 @@ const app = require('../src/index');
 
 describe('API Integration Tests', () => {
 
-    // Test 1: Verificar que la ruta raíz funciona
     describe('GET /', () => {
         it('debería retornar mensaje de bienvenida', async () => {
             const response = await request(app).get('/');
@@ -14,7 +13,6 @@ describe('API Integration Tests', () => {
         });
     });
 
-    // Test 2: Obtener todos los usuarios
     describe('GET /api/users', () => {
         it('debería retornar lista de usuarios', async () => {
             const response = await request(app).get('/api/users');
@@ -26,7 +24,6 @@ describe('API Integration Tests', () => {
         });
     });
 
-    // Test 3: Crear un nuevo usuario
     describe('POST /api/users', () => {
         it('debería crear un nuevo usuario', async () => {
             const newUser = {
@@ -55,7 +52,6 @@ describe('API Integration Tests', () => {
         });
     });
 
-    // Test 4: Obtener usuario por ID
     describe('GET /api/users/:id', () => {
         it('debería retornar un usuario específico', async () => {
             const response = await request(app).get('/api/users/1');
